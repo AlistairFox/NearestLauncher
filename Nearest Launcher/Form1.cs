@@ -1,24 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
-using System.Drawing.Printing;
 using Nearest_Launcher.Properties;
 using System.IO;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
-using Google.Apis;
 using Google.Apis.Auth.OAuth2;
-using Google.Apis.Drive.v3.Data;
 using Google.Apis.Drive.v3;
-using Google.Apis.Util.Store;
 using Google.Apis.Download;
 using Google.Apis.Services;
 using System.Reflection;
@@ -57,6 +46,9 @@ namespace Nearest_Launcher
 
         private void Update(object sender, ElapsedEventArgs e)
         {
+            if(ActiveForm != this)
+                return;
+
             if (Process_Checked)
             {
                 if (Play_button.Visible)
@@ -101,6 +93,20 @@ namespace Nearest_Launcher
                     else
                         Check_Update_Button.Visible = false;
                 }
+
+                if(AutoExit_Check.Visible)
+                {
+                    if (AutoExit_Check.InvokeRequired)
+                    {
+                        AutoExit_Check.Invoke(new Action(() =>
+                        {
+
+                            AutoExit_Check.Visible = false;
+                        }));
+                    }
+                    else
+                        AutoExit_Check.Visible = false;
+                }
             }
             else
             {
@@ -117,6 +123,20 @@ namespace Nearest_Launcher
                     }
                     else
                         Play_button.Visible = true;
+                }
+
+                if (!AutoExit_Check.Visible)
+                {
+                    if (AutoExit_Check.InvokeRequired)
+                    {
+                        AutoExit_Check.Invoke(new Action(() =>
+                        {
+
+                            AutoExit_Check.Visible = true;
+                        }));
+                    }
+                    else
+                        AutoExit_Check.Visible = true;
                 }
 
                 if (!SaveLogsCheck.Visible)
@@ -179,9 +199,9 @@ namespace Nearest_Launcher
 
 
                 if (BackGroundImage_Num == 0)
-                    this.BackgroundImage = BackGroundImage0;
+                    BackgroundImage = BackGroundImage0;
                 else if (BackGroundImage_Num == 1)
-                    this.BackgroundImage = BackGroundImage1;
+                    BackgroundImage = BackGroundImage1;
             }
 
         }
@@ -258,6 +278,9 @@ namespace Nearest_Launcher
             if (System.IO.File.Exists(Starter))
             {
                 System.Diagnostics.Process.Start(Starter, Args);
+
+                if(AutoExit_Check.Checked)
+                    Application.Exit();
             }
             else
             {

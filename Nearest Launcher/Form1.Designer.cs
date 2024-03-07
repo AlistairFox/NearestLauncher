@@ -43,6 +43,7 @@
             this.Download_progress = new System.Windows.Forms.ProgressBar();
             this.Download_Label = new System.Windows.Forms.Label();
             this.Percent_label = new System.Windows.Forms.Label();
+            this.AutoExit_Check = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.BackGroundObject1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackGroundObject2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -200,7 +201,7 @@
             this.Check_Update_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Check_Update_Button.Font = new System.Drawing.Font("Impact", 10F);
             this.Check_Update_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Check_Update_Button.Location = new System.Drawing.Point(735, 556);
+            this.Check_Update_Button.Location = new System.Drawing.Point(600, 556);
             this.Check_Update_Button.Name = "Check_Update_Button";
             this.Check_Update_Button.Size = new System.Drawing.Size(95, 45);
             this.Check_Update_Button.TabIndex = 11;
@@ -244,6 +245,19 @@
             this.Percent_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Percent_label.Visible = false;
             // 
+            // AutoExit_Check
+            // 
+            this.AutoExit_Check.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.AutoExit_Check.Checked = true;
+            this.AutoExit_Check.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.AutoExit_Check.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AutoExit_Check.Location = new System.Drawing.Point(701, 556);
+            this.AutoExit_Check.Name = "AutoExit_Check";
+            this.AutoExit_Check.Size = new System.Drawing.Size(129, 45);
+            this.AutoExit_Check.TabIndex = 15;
+            this.AutoExit_Check.Text = "Закрыть лаунчер при запуске игры";
+            this.AutoExit_Check.UseVisualStyleBackColor = false;
+            // 
             // MainWindow
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -252,10 +266,11 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1024, 601);
             this.ControlBox = false;
+            this.Controls.Add(this.Check_Update_Button);
+            this.Controls.Add(this.AutoExit_Check);
             this.Controls.Add(this.Percent_label);
             this.Controls.Add(this.Download_Label);
             this.Controls.Add(this.Download_progress);
-            this.Controls.Add(this.Check_Update_Button);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.SaveLogsCheck);
             this.Controls.Add(this.Play_button);
@@ -304,6 +319,7 @@
         private System.Windows.Forms.ProgressBar Download_progress;
         private System.Windows.Forms.Label Download_Label;
         private System.Windows.Forms.Label Percent_label;
+        private System.Windows.Forms.CheckBox AutoExit_Check;
     }
 }
 
