@@ -44,6 +44,7 @@
             this.Download_Label = new System.Windows.Forms.Label();
             this.Percent_label = new System.Windows.Forms.Label();
             this.AutoExit_Check = new System.Windows.Forms.CheckBox();
+            this.Remove_ShaderCache = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BackGroundObject1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackGroundObject2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -115,7 +116,7 @@
             this.VK.FlatAppearance.BorderSize = 0;
             this.VK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.VK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.VK.Location = new System.Drawing.Point(61, 556);
+            this.VK.Location = new System.Drawing.Point(12, 556);
             this.VK.Name = "VK";
             this.VK.Size = new System.Drawing.Size(45, 45);
             this.VK.TabIndex = 5;
@@ -130,7 +131,7 @@
             this.Discord.FlatAppearance.BorderSize = 0;
             this.Discord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Discord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.Discord.Location = new System.Drawing.Point(112, 556);
+            this.Discord.Location = new System.Drawing.Point(63, 556);
             this.Discord.Name = "Discord";
             this.Discord.Size = new System.Drawing.Size(45, 45);
             this.Discord.TabIndex = 6;
@@ -178,7 +179,6 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.button1.BackgroundImage = global::Nearest_Launcher.Properties.Resources.NearestStage_Log_Open;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -188,6 +188,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 45);
             this.button1.TabIndex = 10;
+            this.button1.Text = "Открыть \n лог";
             this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.button1.UseVisualStyleBackColor = false;
@@ -229,7 +230,6 @@
             this.Download_Label.Name = "Download_Label";
             this.Download_Label.Size = new System.Drawing.Size(402, 13);
             this.Download_Label.TabIndex = 13;
-            this.Download_Label.Text = "label1";
             this.Download_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Download_Label.Visible = false;
             // 
@@ -258,6 +258,24 @@
             this.AutoExit_Check.Text = "Закрыть лаунчер при запуске игры";
             this.AutoExit_Check.UseVisualStyleBackColor = false;
             // 
+            // Remove_ShaderCache
+            // 
+            this.Remove_ShaderCache.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.Remove_ShaderCache.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Remove_ShaderCache.FlatAppearance.BorderSize = 0;
+            this.Remove_ShaderCache.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Remove_ShaderCache.Font = new System.Drawing.Font("Impact", 10F);
+            this.Remove_ShaderCache.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Remove_ShaderCache.Location = new System.Drawing.Point(114, 556);
+            this.Remove_ShaderCache.Name = "Remove_ShaderCache";
+            this.Remove_ShaderCache.Size = new System.Drawing.Size(106, 45);
+            this.Remove_ShaderCache.TabIndex = 16;
+            this.Remove_ShaderCache.Text = "Удалить кэш шейдеров";
+            this.Remove_ShaderCache.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Remove_ShaderCache.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.Remove_ShaderCache.UseVisualStyleBackColor = false;
+            this.Remove_ShaderCache.Click += new System.EventHandler(this.Remove_ShaderCache_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -266,6 +284,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1024, 601);
             this.ControlBox = false;
+            this.Controls.Add(this.Remove_ShaderCache);
             this.Controls.Add(this.Check_Update_Button);
             this.Controls.Add(this.AutoExit_Check);
             this.Controls.Add(this.Percent_label);
@@ -320,6 +339,7 @@
         private System.Windows.Forms.Label Download_Label;
         private System.Windows.Forms.Label Percent_label;
         private System.Windows.Forms.CheckBox AutoExit_Check;
+        private System.Windows.Forms.Button Remove_ShaderCache;
     }
 }
 

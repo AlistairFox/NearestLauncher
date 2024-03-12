@@ -674,5 +674,19 @@ namespace Nearest_Launcher
 
 
         }
+
+        private void Remove_ShaderCache_Click(object sender, EventArgs e)
+        {
+            string shaderCacheDir = LaucherDirrectory + "\\_appdata_\\shaders_cache";
+
+            if(System.IO.Directory.Exists(shaderCacheDir))
+            {
+                System.IO.Directory.Delete(shaderCacheDir, true);
+            }
+            else
+            {
+                MessageBox.Show("Кэш шейдеров не найден!", "NearestLaucher", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }
